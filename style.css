@@ -1,0 +1,245 @@
+body{
+  background-color: #f4fffa;
+}
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+
+.about p{
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.about {
+  text-align: center;
+}
+
+.features p{
+  margin-bottom: 2px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+button{
+  text-align: center;
+  margin: 0 auto;
+}
+#app{
+  margin-top: 100px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 5px;
+  grid-row-gap:5px;
+  grid-template-areas:
+  "sidebar details";
+  margin: 0 auto;
+}
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: grey;
+  padding: 10px;
+  background-color: white;
+  border-style: solid;
+  max-height: 490px;
+  overflow-y: scroll;
+}
+
+.details{
+  grid-area: details;
+  background-color: grey;
+  padding: 10px;
+  background-color: white;
+  border-style: solid;
+  max-height: 470px;
+  overflow-y: scroll;
+}
+
+.leftlink{
+    float: left;
+}
+
+.rightlink{
+    float: right;
+    margin-right: 10px;
+}
+
+.rightlink a {
+  font-size: 20px;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.details h2{
+  text-align: center;
+}
+
+.selected{
+  font-size: 50px;
+}
+
+.sidebar p:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+nav ul{
+  list-style-type: none;
+  background-color: black;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+nav li {
+  color: white;
+  display: inline-block;
+}
+
+.header{
+  font-size: 20px;
+  font-family: 'Kaushan Script', cursive;
+  float: left;
+  font-weight: bold;
+}
+
+
+nav a{
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+nav li a:hover{
+  background-color: grey;
+}
+
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: #EBEBEB;
+  margin-top: 20px;
+}
+
+footer p{
+  margin-top: 20px;
+}
+
+ul {
+  list-style-position: inside;
+  text-align: center;
+}
+
+textarea{
+  vertical-align: top;
+  height: 10em;
+  width: 30em;
+}
+
+input{
+  width: 30em;
+}
+
+.button{
+  width: 10em;
+  text-align: center;
+}
+
+label{
+  text-align: right;
+  display: inline-block;
+  width: 50px;
+}
+
+.detailView p{
+  width: 500px;
+}
+
+@media (max-width: 800px) {
+  .wrapper{
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "sidebar"
+    "details";
+  }
+  div.sidebar{
+    width: 600px;
+    margin-left: 30px;
+  }
+
+  div.details{
+    width: 600px;
+    margin-left: 30px;
+  }
+
+  textarea{
+    height: 5em;
+  }
+  footer {
+    position: static;
+    padding-top: 5px;
+    background-color: #f4fffa;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .wrapper{
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "sidebar"
+    "details";
+  }
+  div.sidebar{
+    width: 500px;
+    margin-left: 15px;
+  }
+
+  div.details{
+    width: 500px;
+    margin-left: 15px;
+  }
+
+  textarea{
+    height: 3em;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .wrapper{
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "sidebar"
+    "details";
+  }
+  div.sidebar{
+    width: 300px;
+    margin-left: 15px;
+  }
+
+  div.details{
+    width: 300px;
+    margin-left: 15px;
+  }
+
+  textarea{
+    height: 3em;
+  }
+
+}

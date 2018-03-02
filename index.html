@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <title>Employee Manager</title>
+</head>
+
+
+<body>
+  <div id="app">
+    <nav>
+      <ul>
+        <li class="header">Employee Manager</li>
+        <li class="rightlink" v-on:click="setAbout()"><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper" v-show="about === false">
+      <div class="details">
+        <h2>{{header}}</h2>
+        <form>
+        <div v-show="editing === true">
+        <label>Name:</label>
+        <input type="text" v-show="editing === true" v-model="name"></input> <br>
+        <label>Email:</label>
+        <input type="text" v-show="editing === true" v-model="email"></input> <br>
+        <label>Job:</label>
+        <input type="text" v-show="editing === true" v-model="job"></input> <br>
+        <label>Salary:</label>
+        <input type="text" v-show="editing === true" v-model="salary"></input> <br>
+        <label>Notes:</label>
+        <textarea v-show="editing === true" v-model="notes"></textarea> <br>
+      </form>
+      </div>
+      <div class="detailView" v-show="editing === false">
+        <p><b>Name:</b> {{name}}</p>
+        <p><b>Email:</b> {{email}}</p>
+        <p><b>Job:</b> {{job}}</p>
+        <p><b>Salary:</b> {{salary}}</p>
+        <p><b>Notes:</b> {{notes}}</p>
+      </div>
+      <br>
+        <input class="button" type="submit" v-on:click="save()" v-show="adding === true" value="Add"></input>
+        <input class="button" type="submit" v-on:click="edit()" v-show="adding === false" v-bind:value="buttonTitle"></input>
+      </div>
+
+      <div class="sidebar">
+        <h2>Employees</h2>
+          <p v-on:click="newEmployee()">Add Employee...</p>
+          <div v-for="item in employees">
+            <p v-on:click="select(item.name)"> {{ item.name }} </p>
+          </div>
+      </div>
+    </div>
+    <div v-show="about === true" class="about">
+      <h2>Welcome!</h2>
+      <p>Employee Manager is the best Employee Management Software available on the market today. And,
+        the best part is, it's free! Through the magic of Vue, you can easily add all your employees to
+        this highly secure database.</p>
+        <br>
+        <h2>Features include:</h2>
+        <div class="features">
+          <p>Add Employees</p>
+          <p>Add Employee Email Addresses</p>
+          <p>Add Employee Job Titles</p>
+          <p>Add Employee Salaries</p>
+          <p>Add Notes About Employees</p>
+          <p>Edit Employee Names After You Add Them</p>
+          <p>Edit Employee Email Addresses After You Add Them</p>
+          <p>Edit Employee Job Titles After You Add Them</p>
+          <p>Edit Employee Salaries After You Add Them</p>
+          <p>Edit Employee Notes After You Add Them</p>
+        </div>
+          <br>
+          <button v-on:click="leaveAbout()">Get Started</button>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="script.js"></script>
+</body>
+<footer>
+  <p>Copyright yesterday. Check out my github.</p>
+</footer>
+</html>
